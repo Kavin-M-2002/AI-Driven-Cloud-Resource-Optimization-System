@@ -67,13 +67,14 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
 
 * After the creation of the instance, access it through Windows Powershell by logging using the security key.
 
-    # for initiating EC2 Instance on the Windows Powershell
+    ##### for initiating EC2 Instance on the Windows Powershell
 
       ```bash
       cd <security key locating directory>
       ssh -i <security-key.pem or ppk> ec2-user@<public-ipv4-address>
       nano stream_metrics.py 
       ````
+  
 * The `stream_metrics.py` streams real-time CPU utilization metrics from the workload source (e.g., EC2) to the prediction endpoint for generating resource usage forecasts.
 
 * Installing logging agents
@@ -156,3 +157,22 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
   --max-size 5 \
   --desired-capacity 1
     ```
+
+  ##### For verification
+
+    ```bash
+    aws autoscaling describe-auto-scaling-groups \
+  --auto-scaling-group-names <created-asg-group-name>
+    ```
+
+  ##### setting ASG capacity to 0
+
+    ```bash
+    aws autoscaling update-auto-scaling-group \
+  --auto-scaling-group-name <created-asg-group-name> \
+  --min-size 0 \
+  --max-size 0 \
+  --desired-capacity 0
+    ```
+
+    
