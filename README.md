@@ -35,11 +35,9 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
 
 * Later created a repository created in AWS **Elastic Container Registry** `[ECR]` for containerization which is done by **Docker** locally.
 
-   ```
-function hello() {
-  console.log("Hello, GitHub!");
-}
-hello();
-```
+  #For login to ECR:
+  '''
+  aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <account-id>.dkr.ecr.us-east-1.amazonaws.com
+  '''
 
 
