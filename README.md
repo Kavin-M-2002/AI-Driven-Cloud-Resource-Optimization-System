@@ -21,4 +21,4 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
  
     + LSTM was the primary model which used for deployment due to better performance.
  
-    + LSTM model saved as a bundle[
+    + LSTM model saved as a bundle along with its dependencies. !(deploy_bundle.zip)
