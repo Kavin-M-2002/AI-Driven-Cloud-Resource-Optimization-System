@@ -5,7 +5,11 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
 
 ![Workflow Diagram](workflow_diagram.png)
 
-* **Collection and Feature Engineering Phase**
+#### Machine Learning Phase - 
+
+**Primary Tools:** `VS Code` , `Google Colab`
+
+* **Collection and Feature Engineering**
   
     + Data Collection - Collected from Kaggle (Bitbrains Dataset).
  
@@ -13,7 +17,7 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
  
     + Normalization, Scaling, Creating Sequences
 
-* **Model Training Phase**
+* **Model Training**
 
     + Used LSTM and XGBoost for Model Training.
  
@@ -21,4 +25,21 @@ An end-to-end ML-powered cloud optimization pipeline that forecasts CPU workload
  
     + LSTM was the primary model which used for deployment due to better performance.
  
-    + LSTM model saved as a bundle along with its dependencies. !(deploy_bundle.zip)
+    + LSTM model saved as a zip file along with its dependencies.
+
+#### Cloud Deployment - 
+
+**Services:** `AWS` , `Docker` , `Grafana`
+
+* The saved model initially stored on S3 bucket.
+
+* Later created a repository created in AWS **Elastic Container Registry** `[ECR]` for containerization which is done by **Docker** locally.
+
+   ```
+function hello() {
+  console.log("Hello, GitHub!");
+}
+hello();
+```
+
+
